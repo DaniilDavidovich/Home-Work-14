@@ -142,11 +142,17 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return 8
+            return 6
         case 1:
-            return 10
+            return 2
+        case 2:
+            return 2
+        case 3:
+            return 11
+        case 4:
+            return 3
         default:
-            return 9
+            return 0 
         }
     }
     
@@ -162,9 +168,21 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
             cell.backgroundColor = .systemBlue
             return cell
-        default:
+        case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
             cell.backgroundColor = .systemRed
+            return cell
+        case 3:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
+            cell.backgroundColor = .systemPink
+            return cell
+        case 4:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
+            cell.backgroundColor = .systemGray
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
+            cell.backgroundColor = .systemGray
             return cell
         }
     }
