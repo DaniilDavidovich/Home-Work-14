@@ -12,6 +12,8 @@
 		A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */; };
 		A572C6E1296F5FCC006EC801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A572C6E0296F5FCC006EC801 /* Assets.xcassets */; };
 		A572C6E4296F5FCC006EC801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A572C6E2296F5FCC006EC801 /* LaunchScreen.storyboard */; };
+		A572C6EF296F6777006EC801 /* Albums Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6EE296F6777006EC801 /* Albums Model.swift */; };
+		A572C6F1296F6B46006EC801 /* AlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6F0296F6B46006EC801 /* AlbumsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		A572C6E0296F5FCC006EC801 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A572C6E3296F5FCC006EC801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A572C6E5296F5FCC006EC801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A572C6EE296F6777006EC801 /* Albums Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Albums Model.swift"; sourceTree = "<group>"; };
+		A572C6F0296F6B46006EC801 /* AlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 			children = (
 				A572C6ED296F601E006EC801 /* App */,
 				A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */,
+				A572C6EE296F6777006EC801 /* Albums Model.swift */,
+				A572C6F0296F6B46006EC801 /* AlbumsCell.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -159,7 +165,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */,
+				A572C6F1296F6B46006EC801 /* AlbumsCell.swift in Sources */,
 				A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */,
+				A572C6EF296F6777006EC801 /* Albums Model.swift in Sources */,
 				A572C6DA296F5FCB006EC801 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
