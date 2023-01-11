@@ -24,7 +24,9 @@ class AlbumsViewController: UIViewController {
     //MARK: - Setups
     
     private func setupView() {
-        view.backgroundColor = .red
+        view.backgroundColor = .black
+        title = "Albums"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupHierarhy() {
