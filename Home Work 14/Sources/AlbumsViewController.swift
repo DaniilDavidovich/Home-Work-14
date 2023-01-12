@@ -35,8 +35,8 @@ class AlbumsViewController: UIViewController {
     //MARK: - Setups
     
     private func setupView() {
-        view.backgroundColor = .black
         title = "Albums"
+        view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -47,7 +47,7 @@ class AlbumsViewController: UIViewController {
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
