@@ -12,6 +12,13 @@ class AlbumCellHeader: UICollectionReusableView {
     static let identifier = "AlbumCellHeader"
     
     // MARK: - Outlets
+    let lineLabel: UILabel = {
+        let lineLabelRight = UILabel ()
+        lineLabelRight.backgroundColor = .systemGray5
+        lineLabelRight.layer.cornerRadius = 2
+        lineLabelRight.translatesAutoresizingMaskIntoConstraints = false
+        return lineLabelRight
+    }()
     
     lazy var title: UILabel = {
         let label = UILabel()
@@ -37,6 +44,7 @@ class AlbumCellHeader: UICollectionReusableView {
     
     private func setupHierarchy() {
         addSubview(title)
+        addSubview(lineLabel)
     }
     
     private func setupLayout() {
@@ -47,6 +55,12 @@ class AlbumCellHeader: UICollectionReusableView {
 //        }
         
         NSLayoutConstraint.activate([
+            
+            lineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            lineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            lineLabel.heightAnchor.constraint(equalToConstant: 1),
+            lineLabel.bottomAnchor.constraint(equalTo: title.topAnchor, constant: -10),
+            
             title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             title.leadingAnchor.constraint(equalTo: self.leadingAnchor)
         ])

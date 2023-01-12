@@ -22,12 +22,12 @@ extension AlbumsModel {
          AlbumsModel(mainTitle: "For Music", valueOfPhoto: String(Int.random(in: 0...50)), image: "ForMusic"),
          AlbumsModel(mainTitle: "Instagram", valueOfPhoto: String(Int.random(in: 0...1000)), image: "Instagram")
         ],
-        [AlbumsModel(mainTitle: "Family", valueOfPhoto: "Created by You", image: "allBooks"),
-         AlbumsModel(mainTitle: "Holidays", valueOfPhoto: "Created by Maxim", image: "allBooks"),
-         AlbumsModel(mainTitle: "Friends", valueOfPhoto: "Created by You", image: "allBooks")
+        [AlbumsModel(mainTitle: "Family", valueOfPhoto: "Created by You", image: "Family"),
+         AlbumsModel(mainTitle: "Holidays", valueOfPhoto: "Created by Maxim", image: "Holidays"),
+         AlbumsModel(mainTitle: "Friends", valueOfPhoto: "Created by You", image: "Friends")
         ],
         [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 1...30)), image: "allBooks"),
-         AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "allBooks"),
+         AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "Places"),
         ],
         [AlbumsModel(mainTitle: "Book Six", valueOfPhoto: "Description of book six", image: "book6", numberOfItem: 6),
          AlbumsModel(mainTitle: "Book Seven", valueOfPhoto: "Description of book seven", image: "book7", numberOfItem: 7),
