@@ -16,6 +16,7 @@ class AlbumsViewController: UIViewController {
         collection.register(AlbumsCell.self, forCellWithReuseIdentifier: AlbumsCell.identifier)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(AlbumCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumCellHeader.identifier)
+        collection.register(MyAlbumViewCell.self, forCellWithReuseIdentifier: MyAlbumViewCell.identifier)
         collection.delegate = self
         collection.dataSource = self
         return collection
@@ -201,24 +202,11 @@ class AlbumsViewController: UIViewController {
 extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        5
+        AlbumsModel.modelsArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 6
-        case 1:
-            return 3
-        case 2:
-            return 3
-        case 3:
-            return 11
-        case 4:
-            return 3
-        default:
-            return 0
-        }
+        return AlbumsModel.modelsArray[section].count
     }
     
     
@@ -226,7 +214,7 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath)
             cell.backgroundColor = .systemGreen
             return cell
         case 1:
@@ -280,6 +268,10 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
             return header
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
     }
 }
 
