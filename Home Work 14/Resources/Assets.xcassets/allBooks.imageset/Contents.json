@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "Creative_Wallpaper_Stack_of_books_on_the_bench_082401_-2.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "Creative_Wallpaper_Stack_of_books_on_the_bench_082401_.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "Creative_Wallpaper_Stack_of_books_on_the_bench_082401_-1.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
