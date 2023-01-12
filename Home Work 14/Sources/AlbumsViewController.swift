@@ -90,7 +90,7 @@ class AlbumsViewController: UIViewController {
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
                                                                       leading: 0,
-                                                                      bottom: 20,
+                                                                      bottom: 0,
                                                                       trailing: 0)
                 
                 

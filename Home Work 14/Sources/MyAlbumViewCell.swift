@@ -85,8 +85,9 @@ class MyAlbumViewCell: UICollectionViewCell {
 //            image.topAnchor.constraint(equalTo: contentView.topAnchor),
             image.rightAnchor.constraint(equalTo: contentView.rightAnchor),
 //            image.bottomAnchor.constraint(equalTo: featuredTitle.topAnchor, constant: 10),
+            image.topAnchor.constraint(equalTo: contentView.topAnchor),
 
-            image.heightAnchor.constraint(equalToConstant: 170),
+            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
             
             valueOfPhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             valueOfPhoto.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
