@@ -20,6 +20,16 @@ class AlbumCellHeader: UICollectionReusableView {
         return lineLabelRight
     }()
     
+    private lazy var buttonSeeAll: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("See All", for: .normal)
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        
+        return button
+    }()
+    
     lazy var title: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
@@ -45,6 +55,7 @@ class AlbumCellHeader: UICollectionReusableView {
     private func setupHierarchy() {
         addSubview(title)
         addSubview(lineLabel)
+        addSubview(buttonSeeAll)
     }
     
     private func setupLayout() {
@@ -62,7 +73,10 @@ class AlbumCellHeader: UICollectionReusableView {
             lineLabel.bottomAnchor.constraint(equalTo: title.topAnchor, constant: -10),
             
             title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor)
+            title.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            
+            buttonSeeAll.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            buttonSeeAll.centerYAnchor.constraint(equalTo: title.centerYAnchor),
         ])
     }
     
