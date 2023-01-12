@@ -16,14 +16,14 @@ struct AlbumsModel: Hashable {
 
 extension AlbumsModel {
     static let modelsArray = [
-        [AlbumsModel(mainTitle: "Recent", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "allBooks"),
-         AlbumsModel(mainTitle: "Favorite", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks"),
-         AlbumsModel(mainTitle: "ScreenShots", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks"),
-         AlbumsModel(mainTitle: "For Music", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks"),
-         AlbumsModel(mainTitle: "Instagram", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks")
+        [AlbumsModel(mainTitle: "Recent", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "Recent"),
+         AlbumsModel(mainTitle: "Favorite", valueOfPhoto: String(Int.random(in: 0...1000)), image: "Favorite"),
+         AlbumsModel(mainTitle: "Favorite ScreenShots", valueOfPhoto: String(Int.random(in: 0...1000)), image: "FavoriteScreenshot"),
+         AlbumsModel(mainTitle: "For Music", valueOfPhoto: String(Int.random(in: 0...50)), image: "ForMusic"),
+         AlbumsModel(mainTitle: "Instagram", valueOfPhoto: String(Int.random(in: 0...1000)), image: "Instagram")
         ],
         [AlbumsModel(mainTitle: "Family", valueOfPhoto: "Created by You", image: "allBooks"),
-         AlbumsModel(mainTitle: "Weekend", valueOfPhoto: "Created by Maxim", image: "allBooks"),
+         AlbumsModel(mainTitle: "Holidays", valueOfPhoto: "Created by Maxim", image: "allBooks"),
          AlbumsModel(mainTitle: "Friends", valueOfPhoto: "Created by You", image: "allBooks")
         ],
         [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 1...30)), image: "allBooks"),
