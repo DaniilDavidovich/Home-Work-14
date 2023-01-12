@@ -11,6 +11,8 @@ class AlbumsViewController: UIViewController {
     
     //MARK: - Outlets
     
+    
+    
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collection.register(AlbumsCell.self, forCellWithReuseIdentifier: AlbumsCell.identifier)
@@ -38,6 +40,9 @@ class AlbumsViewController: UIViewController {
         title = "Albums"
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(addTapped))
+        
     }
     
     private func setupHierarhy() {
@@ -50,10 +55,8 @@ class AlbumsViewController: UIViewController {
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-        
     }
     
     //MARK: - Layout setup
@@ -272,6 +275,10 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
+    @objc private func addTapped() {
+        
     }
 }
 
