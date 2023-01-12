@@ -9,46 +9,45 @@ import Foundation
 
 struct AlbumsModel: Hashable {
     var mainTitle: String?
-    var description: String?
+    var valueOfPhoto: String?
     var image: String
     var numberOfItem: Int?
 }
 
 extension AlbumsModel {
     static let modelsArray = [
-        [AlbumsModel(mainTitle: "Featured Collection", description: "Biography", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "Short Stories", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "History", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "Philosophy", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "Poetry", image: "allBooks")
+        [AlbumsModel(mainTitle: "Recent", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "allBooks"),
+         AlbumsModel(mainTitle: "Favorite", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks"),
+         AlbumsModel(mainTitle: "ScreenShots", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks"),
+         AlbumsModel(mainTitle: "For Music", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks"),
+         AlbumsModel(mainTitle: "Instagram", valueOfPhoto: String(Int.random(in: 0...1000)), image: "allBooks")
         ],
-        [AlbumsModel(mainTitle: "Featured Collection", description: "Biography", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "Short Stories", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "History", image: "allBooks")
+        [AlbumsModel(mainTitle: "Family", valueOfPhoto: "Created by You", image: "allBooks"),
+         AlbumsModel(mainTitle: "Weekend", valueOfPhoto: "Created by Maxim", image: "allBooks"),
+         AlbumsModel(mainTitle: "Friends", valueOfPhoto: "Created by You", image: "allBooks")
         ],
-        [AlbumsModel(mainTitle: "Featured Collection", description: "Biography", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "Short Stories", image: "allBooks"),
-         AlbumsModel(mainTitle: "Featured Collection", description: "History", image: "allBooks")
+        [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 1...30)), image: "allBooks"),
+         AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "allBooks"),
         ],
-        [AlbumsModel(mainTitle: "Book Six", description: "Description of book six", image: "book6", numberOfItem: 6),
-         AlbumsModel(mainTitle: "Book Seven", description: "Description of book seven", image: "book7", numberOfItem: 7),
-         AlbumsModel(mainTitle: "Book Eight", description: "Description of book eight", image: "book8", numberOfItem: 8),
-         AlbumsModel(mainTitle: "Book Nine", description: "Description of book nine", image: "book9", numberOfItem: 9),
-         AlbumsModel(mainTitle: "Book Ten", description: "Description of book ten", image: "book10", numberOfItem: 10),
-         AlbumsModel(mainTitle: "Book Eleven", description: "Description of book eleven", image: "book11", numberOfItem: 11),
-         AlbumsModel(mainTitle: "Book Twelve", description: "Description of book twelve", image: "book12", numberOfItem: 12),
-         AlbumsModel(mainTitle: "Book Thirteen", description: "Description of book thirteen", image: "book13", numberOfItem: 13),
-         AlbumsModel(mainTitle: "Book Fourteen", description: "Description of book fourteen", image: "book14", numberOfItem: 14)
+        [AlbumsModel(mainTitle: "Book Six", valueOfPhoto: "Description of book six", image: "book6", numberOfItem: 6),
+         AlbumsModel(mainTitle: "Book Seven", valueOfPhoto: "Description of book seven", image: "book7", numberOfItem: 7),
+         AlbumsModel(mainTitle: "Book Eight", valueOfPhoto: "Description of book eight", image: "book8", numberOfItem: 8),
+         AlbumsModel(mainTitle: "Book Nine", valueOfPhoto: "Description of book nine", image: "book9", numberOfItem: 9),
+         AlbumsModel(mainTitle: "Book Ten", valueOfPhoto: "Description of book ten", image: "book10", numberOfItem: 10),
+         AlbumsModel(mainTitle: "Book Eleven", valueOfPhoto: "Description of book eleven", image: "book11", numberOfItem: 11),
+         AlbumsModel(mainTitle: "Book Twelve", valueOfPhoto: "Description of book twelve", image: "book12", numberOfItem: 12),
+         AlbumsModel(mainTitle: "Book Thirteen", valueOfPhoto: "Description of book thirteen", image: "book13", numberOfItem: 13),
+         AlbumsModel(mainTitle: "Book Fourteen", valueOfPhoto: "Description of book fourteen", image: "book14", numberOfItem: 14)
         ],
-        [AlbumsModel(mainTitle: "Book Six", description: "Description of book six", image: "book6", numberOfItem: 6),
-         AlbumsModel(mainTitle: "Book Seven", description: "Description of book seven", image: "book7", numberOfItem: 7),
-         AlbumsModel(mainTitle: "Book Eight", description: "Description of book eight", image: "book8", numberOfItem: 8),
-         AlbumsModel(mainTitle: "Book Nine", description: "Description of book nine", image: "book9", numberOfItem: 9),
-         AlbumsModel(mainTitle: "Book Ten", description: "Description of book ten", image: "book10", numberOfItem: 10),
-         AlbumsModel(mainTitle: "Book Eleven", description: "Description of book eleven", image: "book11", numberOfItem: 11),
-         AlbumsModel(mainTitle: "Book Twelve", description: "Description of book twelve", image: "book12", numberOfItem: 12),
-         AlbumsModel(mainTitle: "Book Thirteen", description: "Description of book thirteen", image: "book13", numberOfItem: 13),
-         AlbumsModel(mainTitle: "Book Fourteen", description: "Description of book fourteen", image: "book14", numberOfItem: 14)
+        [AlbumsModel(mainTitle: "Book Six", valueOfPhoto: "Description of book six", image: "book6", numberOfItem: 6),
+         AlbumsModel(mainTitle: "Book Seven", valueOfPhoto: "Description of book seven", image: "book7", numberOfItem: 7),
+         AlbumsModel(mainTitle: "Book Eight", valueOfPhoto: "Description of book eight", image: "book8", numberOfItem: 8),
+         AlbumsModel(mainTitle: "Book Nine", valueOfPhoto: "Description of book nine", image: "book9", numberOfItem: 9),
+         AlbumsModel(mainTitle: "Book Ten", valueOfPhoto: "Description of book ten", image: "book10", numberOfItem: 10),
+         AlbumsModel(mainTitle: "Book Eleven", valueOfPhoto: "Description of book eleven", image: "book11", numberOfItem: 11),
+         AlbumsModel(mainTitle: "Book Twelve", valueOfPhoto: "Description of book twelve", image: "book12", numberOfItem: 12),
+         AlbumsModel(mainTitle: "Book Thirteen", valueOfPhoto: "Description of book thirteen", image: "book13", numberOfItem: 13),
+         AlbumsModel(mainTitle: "Book Fourteen", valueOfPhoto: "Description of book fourteen", image: "book14", numberOfItem: 14)
         ]
     ]
 }

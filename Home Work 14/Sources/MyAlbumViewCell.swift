@@ -13,16 +13,19 @@ class MyAlbumViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
     
-    private lazy var featuredTitle: UILabel = {
+    private lazy var valueOfPhoto: UILabel = {
         let label = UILabel()
-        label.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
+//        label.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
+        label.font = .systemFont(ofSize: 13)
+        label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private lazy var descriptionLabel: UILabel = {
+    private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: .title2)
+//        label.font = UIFont.preferredFont(forTextStyle: .title2)
+        label.font = .systemFont(ofSize: 13, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,12 +39,12 @@ class MyAlbumViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    lazy var stack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
+//    lazy var stack: UIStackView = {
+//        let stack = UIStackView()
+//        stack.axis = .vertical
+//        stack.translatesAutoresizingMaskIntoConstraints = false
+//        return stack
+//    }()
     
     // MARK: - Initializers
     
@@ -59,10 +62,14 @@ class MyAlbumViewCell: UICollectionViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
-        contentView.addSubview(stack)
-        stack.addArrangedSubview(image)
-        stack.addArrangedSubview(descriptionLabel)
-        stack.addArrangedSubview(featuredTitle)
+//        contentView.addSubview(stack)
+//        stack.addArrangedSubview(image)
+//        stack.addArrangedSubview(featuredTitle)
+//        stack.addArrangedSubview(descriptionLabel)
+        
+        contentView.addSubview(image)
+        contentView.addSubview(mainTitleLable)
+        contentView.addSubview(valueOfPhoto)
     }
     
     private func setupLayout() {
@@ -74,21 +81,30 @@ class MyAlbumViewCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
         
-            stack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            stack.topAnchor.constraint(equalTo: contentView.topAnchor),
-            stack.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            stack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+//            image.topAnchor.constraint(equalTo: contentView.topAnchor),
+            image.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+//            image.bottomAnchor.constraint(equalTo: featuredTitle.topAnchor, constant: 10),
+
+            image.heightAnchor.constraint(equalToConstant: 170),
+            
+            valueOfPhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            valueOfPhoto.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            
+            mainTitleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            mainTitleLable.bottomAnchor.constraint(equalTo: valueOfPhoto.topAnchor)
             
         ])
         
-        stack.setCustomSpacing(50, after: image)
+//        stack.setCustomSpacing(50, after: image)
+//        stack.isBaselineRelativeArrangement = true
     }
     
     // MARK: - Configuration
     
     func configuration(model: AlbumsModel) {
-        self.featuredTitle.text = model.mainTitle
-        self.descriptionLabel.text = model.description
+        self.mainTitleLable.text = model.mainTitle
+        self.valueOfPhoto.text = model.valueOfPhoto
         self.image.image = UIImage(named: model.image)
     }
     
