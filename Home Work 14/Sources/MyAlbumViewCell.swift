@@ -60,9 +60,9 @@ class MyAlbumViewCell: UICollectionViewCell {
     
     private func setupHierarchy() {
         contentView.addSubview(stack)
-        stack.addArrangedSubview(featuredTitle)
-        stack.addArrangedSubview(descriptionLabel)
         stack.addArrangedSubview(image)
+        stack.addArrangedSubview(descriptionLabel)
+        stack.addArrangedSubview(featuredTitle)
     }
     
     private func setupLayout() {
@@ -81,7 +81,7 @@ class MyAlbumViewCell: UICollectionViewCell {
             
         ])
         
-        stack.setCustomSpacing(10, after: descriptionLabel)
+        stack.setCustomSpacing(50, after: image)
     }
     
     // MARK: - Configuration

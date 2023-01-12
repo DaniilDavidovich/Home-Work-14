@@ -214,17 +214,17 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemGreen
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
+            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+            return item
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemBlue
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
+            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+            return item
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemRed
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
+            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+            return item
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
             cell.backgroundColor = .systemPink
