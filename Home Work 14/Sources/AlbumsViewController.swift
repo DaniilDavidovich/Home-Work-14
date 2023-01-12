@@ -13,11 +13,11 @@ class AlbumsViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collection.delegate = self
-        collection.dataSource = self
         collection.register(AlbumsCell.self, forCellWithReuseIdentifier: AlbumsCell.identifier)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        
+        collection.register(AlbumCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumCellHeader.identifier)
+        collection.delegate = self
+        collection.dataSource = self
         return collection
     }()
     
@@ -71,10 +71,27 @@ class AlbumsViewController: UIViewController {
                                                        heightDimension: .fractionalWidth(1 / 1.8 * 2)) // hight items
                 let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 2)
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-
+                
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0)
                 layoutSection.orthogonalScrollingBehavior = .groupPaging
+                
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.93),
+                    heightDimension: .estimated(80)
+                )
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                      leading: 0,
+                                                                      bottom: 20,
+                                                                      trailing: 0)
+                
                 
                 return layoutSection
             case 1:
@@ -87,13 +104,29 @@ class AlbumsViewController: UIViewController {
                                                        heightDimension: .fractionalWidth(1 / 1.8 )) // hight items
                 let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 1)
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-
+                
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0)
                 layoutSection.orthogonalScrollingBehavior = .groupPaging
                 
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.93),
+                    heightDimension: .estimated(80)
+                )
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                      leading: 0,
+                                                                      bottom: 20,
+                                                                      trailing: 0)
+                
                 return layoutSection
-            
+                
             case 2:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
@@ -104,34 +137,66 @@ class AlbumsViewController: UIViewController {
                                                        heightDimension: .fractionalWidth(1 / 1.8)) // hight items
                 let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 1)
                 layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
-
+                
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0)
                 layoutSection.orthogonalScrollingBehavior = .groupPaging
                 
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.93),
+                    heightDimension: .estimated(80)
+                )
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                      leading: 0,
+                                                                      bottom: 20,
+                                                                      trailing: 0)
+                
                 return layoutSection
-             default:
+            default:
                 
                 let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                       heightDimension: .fractionalHeight(1))
                 let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
                 layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
-
+                
                 let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                        heightDimension: .absolute(44))
                 let layoutGroup = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [layoutItem])
-
+                
                 let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 30, trailing: 10)
-
+                
+                
+                let layoutSectionHeaderSize = NSCollectionLayoutSize(
+                    widthDimension: .fractionalWidth(0.93),
+                    heightDimension: .estimated(80)
+                )
+                let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+                    layoutSize: layoutSectionHeaderSize,
+                    elementKind: UICollectionView.elementKindSectionHeader,
+                    alignment: .top
+                )
+                layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
+                layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
+                                                                      leading: 0,
+                                                                      bottom: 20,
+                                                                      trailing: 0)
+                
                 return layoutSection
             }
         }
     }
 }
-        
-    
-    //MARK: - Extension
+
+
+//MARK: - Extension
 
 extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -144,15 +209,15 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         case 0:
             return 6
         case 1:
-            return 2
+            return 3
         case 2:
-            return 2
+            return 3
         case 3:
             return 11
         case 4:
             return 3
         default:
-            return 0 
+            return 0
         }
     }
     
@@ -187,11 +252,35 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//    }
-    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        switch indexPath.section {
+        case 0:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumCellHeader.identifier, for: indexPath) as! AlbumCellHeader
+            header.title.text = "My Albums"
+            return header
+        case 1:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumCellHeader.identifier, for: indexPath) as! AlbumCellHeader
+            header.title.text = "Shared Albums"
+            return header
+            
+        case 2:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumCellHeader.identifier, for: indexPath) as! AlbumCellHeader
+            header.title.text = "People & Places"
+            return header
+        case 3:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumCellHeader.identifier, for: indexPath) as! AlbumCellHeader
+            header.title.text = "Media Types"
+            return header
+        case 4:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumCellHeader.identifier, for: indexPath) as! AlbumCellHeader
+            header.title.text = "Utilities"
+            return header
+        default:
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+            return header
+        }
+    }
 }
 
 
