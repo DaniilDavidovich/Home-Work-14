@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlbumsViewController: UIViewController {
+class AlbumsTabBorItem: UIViewController {
     
     //MARK: - Outlets
     
@@ -49,7 +49,6 @@ class AlbumsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(addTapped))
-        
     }
     
     private func setupHierarhy() {
@@ -177,7 +176,7 @@ class AlbumsViewController: UIViewController {
 
 //MARK: - Extension
 
-extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         AlbumsModel.modelsArray.count
@@ -275,8 +274,6 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
                 cell?.transform = .identity
             })
         }
-    
-    
     
     
     @objc private func addTapped() {
