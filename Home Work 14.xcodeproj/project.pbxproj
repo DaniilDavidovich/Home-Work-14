@@ -65,8 +65,8 @@
 		A54AF5842970EC4400178D19 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */,
 				A572C6F4296F8F13006EC801 /* MyAlbumViewCell.swift */,
+				A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";

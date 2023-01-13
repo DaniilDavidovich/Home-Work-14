@@ -68,12 +68,12 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
             
-            lineLabel.leadingAnchor.constraint(equalTo: image.leadingAnchor),
+            lineLabel.leadingAnchor.constraint(equalTo: mainTitleLable.leadingAnchor, constant: 0),
             lineLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             lineLabel.heightAnchor.constraint(equalToConstant: 1),
             lineLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -17),
         
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 18),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 11),
             image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 5.5),
             image.heightAnchor.constraint(equalToConstant: 26),
             image.widthAnchor.constraint(equalToConstant: 30),
