@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */; };
 		A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6D7296F5FCB006EC801 /* AppDelegate.swift */; };
 		A572C6DA296F5FCB006EC801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6D9296F5FCB006EC801 /* SceneDelegate.swift */; };
 		A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediAndUtilitiesCell.swift; sourceTree = "<group>"; };
 		A572C6D4296F5FCB006EC801 /* Home Work 14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572C6D7296F5FCB006EC801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A572C6D9296F5FCB006EC801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				A572C6ED296F601E006EC801 /* App */,
 				A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */,
 				A572C6EE296F6777006EC801 /* Albums Model.swift */,
+				A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */,
 				A572C6F0296F6B46006EC801 /* AlbumsCell.swift */,
 				A572C6F2296F7AA9006EC801 /* AlbumCellHeader.swift */,
 				A572C6F4296F8F13006EC801 /* MyAlbumViewCell.swift */,
@@ -173,6 +176,7 @@
 				A572C6F5296F8F13006EC801 /* MyAlbumViewCell.swift in Sources */,
 				A572C6F3296F7AA9006EC801 /* AlbumCellHeader.swift in Sources */,
 				A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */,
+				A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */,
 				A572C6F1296F6B46006EC801 /* AlbumsCell.swift in Sources */,
 				A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */,
 				A572C6EF296F6777006EC801 /* Albums Model.swift in Sources */,

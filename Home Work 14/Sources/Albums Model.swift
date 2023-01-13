@@ -10,7 +10,7 @@ import Foundation
 struct AlbumsModel: Hashable {
     var mainTitle: String?
     var valueOfPhoto: String?
-    var image: String
+    var image: String?
     var numberOfItem: Int?
 }
 
@@ -29,25 +29,21 @@ extension AlbumsModel {
         [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 1...30)), image: "allBooks"),
          AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "Places"),
         ],
-        [AlbumsModel(mainTitle: "Book Six", valueOfPhoto: "Description of book six", image: "book6", numberOfItem: 6),
-         AlbumsModel(mainTitle: "Book Seven", valueOfPhoto: "Description of book seven", image: "book7", numberOfItem: 7),
-         AlbumsModel(mainTitle: "Book Eight", valueOfPhoto: "Description of book eight", image: "book8", numberOfItem: 8),
-         AlbumsModel(mainTitle: "Book Nine", valueOfPhoto: "Description of book nine", image: "book9", numberOfItem: 9),
-         AlbumsModel(mainTitle: "Book Ten", valueOfPhoto: "Description of book ten", image: "book10", numberOfItem: 10),
-         AlbumsModel(mainTitle: "Book Eleven", valueOfPhoto: "Description of book eleven", image: "book11", numberOfItem: 11),
-         AlbumsModel(mainTitle: "Book Twelve", valueOfPhoto: "Description of book twelve", image: "book12", numberOfItem: 12),
-         AlbumsModel(mainTitle: "Book Thirteen", valueOfPhoto: "Description of book thirteen", image: "book13", numberOfItem: 13),
-         AlbumsModel(mainTitle: "Book Fourteen", valueOfPhoto: "Description of book fourteen", image: "book14", numberOfItem: 14)
+        [AlbumsModel(mainTitle: "Video", valueOfPhoto: nil, image: "video", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Selfies", valueOfPhoto: nil, image: "person.crop.square", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Live Photo", valueOfPhoto: nil, image: "livephoto", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Portrait", valueOfPhoto: nil, image: "cube", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Long Exposure", valueOfPhoto: nil, image: "livephoto", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Panoramas", valueOfPhoto: nil, image: "pano", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Slo-mo", valueOfPhoto: nil, image: "slowmo", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Bursts", valueOfPhoto: nil, image: "square.stack.3d.down.right", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Screenshots", valueOfPhoto: nil, image: "camera.viewfinder", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Screen Recordings", valueOfPhoto: nil, image: "record.circle", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Animated", valueOfPhoto: nil, image: "square.stack.3d.forward.dottedline", numberOfItem: nil)
         ],
-        [AlbumsModel(mainTitle: "Book Six", valueOfPhoto: "Description of book six", image: "book6", numberOfItem: 6),
-         AlbumsModel(mainTitle: "Book Seven", valueOfPhoto: "Description of book seven", image: "book7", numberOfItem: 7),
-         AlbumsModel(mainTitle: "Book Eight", valueOfPhoto: "Description of book eight", image: "book8", numberOfItem: 8),
-         AlbumsModel(mainTitle: "Book Nine", valueOfPhoto: "Description of book nine", image: "book9", numberOfItem: 9),
-         AlbumsModel(mainTitle: "Book Ten", valueOfPhoto: "Description of book ten", image: "book10", numberOfItem: 10),
-         AlbumsModel(mainTitle: "Book Eleven", valueOfPhoto: "Description of book eleven", image: "book11", numberOfItem: 11),
-         AlbumsModel(mainTitle: "Book Twelve", valueOfPhoto: "Description of book twelve", image: "book12", numberOfItem: 12),
-         AlbumsModel(mainTitle: "Book Thirteen", valueOfPhoto: "Description of book thirteen", image: "book13", numberOfItem: 13),
-         AlbumsModel(mainTitle: "Book Fourteen", valueOfPhoto: "Description of book fourteen", image: "book14", numberOfItem: 14)
+        [AlbumsModel(mainTitle: "Imports", valueOfPhoto: nil, image: "square.and.arrow.down", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Duplicates", valueOfPhoto: nil, image: "rectangle.on.rectangle", numberOfItem: nil),
+         AlbumsModel(mainTitle: "Recently Deleted", valueOfPhoto: nil, image: "trash", numberOfItem: nil),
         ]
     ]
 }

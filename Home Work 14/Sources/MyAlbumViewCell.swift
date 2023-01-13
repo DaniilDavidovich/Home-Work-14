@@ -106,7 +106,7 @@ class MyAlbumViewCell: UICollectionViewCell {
     func configuration(model: AlbumsModel) {
         self.mainTitleLable.text = model.mainTitle
         self.valueOfPhoto.text = model.valueOfPhoto
-        self.image.image = UIImage(named: model.image)
+        self.image.image = UIImage(named: model.image ?? "")
     }
     
     override func prepareForReuse() {

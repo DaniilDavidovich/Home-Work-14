@@ -16,9 +16,11 @@ class AlbumsViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collection.register(AlbumsCell.self, forCellWithReuseIdentifier: AlbumsCell.identifier)
+        collection.register(MediAndUtilitiesCell.self, forCellWithReuseIdentifier: MediAndUtilitiesCell.identifier)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(AlbumCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumCellHeader.identifier)
         collection.register(MyAlbumViewCell.self, forCellWithReuseIdentifier: MyAlbumViewCell.identifier)
+        
         collection.delegate = self
         collection.dataSource = self
         return collection
@@ -185,7 +187,7 @@ class AlbumsViewController: UIViewController {
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: layoutSectionHeaderSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
-                    alignment: .top
+                    alignment: .topLeading
                 )
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,
@@ -229,13 +231,13 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
             return item
         case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemPink
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
+            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+            return item
         case 4:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
-            cell.backgroundColor = .systemGray
-            return cell
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
+            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+            return item
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
             cell.backgroundColor = .systemGray
