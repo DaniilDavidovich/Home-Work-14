@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MediaAndUtilitiesHeader: UICollectionReusableView {
+class HeaderWithoutSeeAll: UICollectionReusableView {
         
     static let identifier = "MediaAndUtillitiesCellHeader"
     

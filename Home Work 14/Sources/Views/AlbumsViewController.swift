@@ -20,7 +20,7 @@ class AlbumsViewController: UIViewController {
         
         //MARK: Headers
         collection.register(AlbumsCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumsCellHeader.identifier)
-        collection.register(MediaAndUtilitiesHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MediaAndUtilitiesHeader.identifier)
+        collection.register(HeaderWithoutSeeAll.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderWithoutSeeAll.identifier)
         
         //MARK: Cell
         collection.register(MyAlbumViewCell.self, forCellWithReuseIdentifier: MyAlbumViewCell.identifier)
@@ -220,10 +220,14 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
+//        let layout = self.collectionView.collectionViewLayout  // Assuming you use the default flow layout
+//           layout.headerReferenceSize = CGSize(width: 42, height: 42) //Set the header size
+        
         switch indexPath.section {
         case 0:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
             header.title.text = "My Albums"
+            
             return header
         case 1:
             let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
@@ -231,15 +235,15 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             return header
             
         case 2:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderWithoutSeeAll.identifier, for: indexPath) as! HeaderWithoutSeeAll
             header.title.text = "People & Places"
             return header
         case 3:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MediaAndUtilitiesHeader.identifier, for: indexPath) as! MediaAndUtilitiesHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderWithoutSeeAll.identifier, for: indexPath) as! HeaderWithoutSeeAll
             header.title.text = "Media Types"
             return header
         case 4:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MediaAndUtilitiesHeader.identifier, for: indexPath) as! MediaAndUtilitiesHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderWithoutSeeAll.identifier, for: indexPath) as! HeaderWithoutSeeAll
             header.title.text = "Utilities"
             return header
         default:
@@ -251,6 +255,7 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
+    
     
     @objc private func addTapped() {
         

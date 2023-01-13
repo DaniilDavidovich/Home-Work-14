@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */; };
-		A54AF5822970EA1100178D19 /* MediaAndUtilitiesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF5812970EA1100178D19 /* MediaAndUtilitiesHeader.swift */; };
+		A54AF5822970EA1100178D19 /* HeaderWithoutSeeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */; };
 		A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6D7296F5FCB006EC801 /* AppDelegate.swift */; };
 		A572C6DA296F5FCB006EC801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6D9296F5FCB006EC801 /* SceneDelegate.swift */; };
 		A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */; };
@@ -21,7 +21,7 @@
 
 /* Begin PBXFileReference section */
 		A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediAndUtilitiesCell.swift; sourceTree = "<group>"; };
-		A54AF5812970EA1100178D19 /* MediaAndUtilitiesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaAndUtilitiesHeader.swift; sourceTree = "<group>"; };
+		A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithoutSeeAll.swift; sourceTree = "<group>"; };
 		A572C6D4296F5FCB006EC801 /* Home Work 14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572C6D7296F5FCB006EC801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A572C6D9296F5FCB006EC801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				A572C6F2296F7AA9006EC801 /* AlbumsCellHeader.swift */,
-				A54AF5812970EA1100178D19 /* MediaAndUtilitiesHeader.swift */,
+				A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			files = (
 				A572C6F5296F8F13006EC801 /* MyAlbumViewCell.swift in Sources */,
 				A572C6F3296F7AA9006EC801 /* AlbumsCellHeader.swift in Sources */,
-				A54AF5822970EA1100178D19 /* MediaAndUtilitiesHeader.swift in Sources */,
+				A54AF5822970EA1100178D19 /* HeaderWithoutSeeAll.swift in Sources */,
 				A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */,
 				A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */,
 				A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */,
