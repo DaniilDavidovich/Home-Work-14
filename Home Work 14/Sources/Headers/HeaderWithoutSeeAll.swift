@@ -56,6 +56,8 @@ class HeaderWithoutSeeAll: UICollectionReusableView {
         
         NSLayoutConstraint.activate([
             
+            self.heightAnchor.constraint(equalToConstant: 50),
+            
             lineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             lineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             lineLabel.heightAnchor.constraint(equalToConstant: 1),

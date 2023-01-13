@@ -187,7 +187,6 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         return AlbumsModel.modelsArray[section].count
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         switch indexPath.section {
@@ -257,9 +256,16 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     
+    
+    
     @objc private func addTapped() {
         
     }
 }
 
+
+extension AlbumsViewController: UICollectionViewDelegateFlowLayout {
+    
+    
+}
 

@@ -8,7 +8,7 @@
 import UIKit
 
 class AlbumsCellHeader: UICollectionReusableView {
-      
+    
     static let identifier = "AlbumCellHeader"
     
     // MARK: - Outlets
@@ -59,8 +59,10 @@ class AlbumsCellHeader: UICollectionReusableView {
     }
     
     private func setupLayout() {
-            
+        
         NSLayoutConstraint.activate([
+            
+            self.heightAnchor.constraint(equalToConstant: 50),
             
             lineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             lineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -72,6 +74,7 @@ class AlbumsCellHeader: UICollectionReusableView {
             
             buttonSeeAll.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             buttonSeeAll.centerYAnchor.constraint(equalTo: title.centerYAnchor),
+            
         ])
     }
     
