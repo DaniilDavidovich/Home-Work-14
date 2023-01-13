@@ -38,6 +38,7 @@ class AlbumsViewController: UIViewController {
         setupView()
         setupHierarhy()
         setupLayout()
+        collectionView.delaysContentTouches = false
     }
     
     //MARK: - Setups
@@ -261,9 +262,19 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-    }
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+            let cell = collectionView.cellForItem(at: indexPath)
+            UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+                cell?.transform = CGAffineTransform(scaleX: 0.90, y: 0.90)
+            })
+        }
+        
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+            let cell = collectionView.cellForItem(at: indexPath)
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .beginFromCurrentState, animations: {
+                cell?.transform = .identity
+            })
+        }
     
     
     

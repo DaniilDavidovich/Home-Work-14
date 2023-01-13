@@ -20,6 +20,26 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         lineLabelRight.translatesAutoresizingMaskIntoConstraints = false
         return lineLabelRight
     }()
+    
+    private lazy var imageRightSite: UIImageView = {
+        let image = UIImage(systemName: "chevron.right")
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = .systemGray
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+            
+        return imageView
+    }()
+    
+    private lazy var labelRihtSite: UILabel = {
+        let label = UILabel()
+        label.textColor = .systemGray
+        label.text = String(Int.random(in: 1...500))
+        label.font = .systemFont(ofSize: 16, weight: .medium)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        return label
+    }()
 
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
@@ -64,11 +84,21 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         contentView.addSubview(image)
         contentView.addSubview(mainTitleLable)
         contentView.addSubview(lineLabel)
+        contentView.addSubview(imageRightSite)
+        contentView.addSubview(labelRihtSite)
     }
     
     private func setupLayout() {
         
         NSLayoutConstraint.activate([
+            
+            labelRihtSite.centerYAnchor.constraint(equalTo: image.centerYAnchor),
+            labelRihtSite.trailingAnchor.constraint(equalTo: imageRightSite.leadingAnchor, constant: -3),
+            
+            imageRightSite.centerYAnchor.constraint(equalTo: image.centerYAnchor),
+            imageRightSite.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant:  -15),
+            imageRightSite.heightAnchor.constraint(equalToConstant: 16),
+            imageRightSite.widthAnchor.constraint(equalToConstant: 10),
             
             lineLabel.leadingAnchor.constraint(equalTo: mainTitleLable.leadingAnchor, constant: 0),
             lineLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
