@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5412D43297208C70057E4A3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D42297208C70057E4A3 /* TabBarController.swift */; };
+		A5412D45297211060057E4A3 /* ForYouTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D44297211060057E4A3 /* ForYouTabBarItem.swift */; };
+		A5412D472972122D0057E4A3 /* SearchTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D462972122D0057E4A3 /* SearchTabBarItem.swift */; };
+		A5412D492972125C0057E4A3 /* LibraryTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D482972125C0057E4A3 /* LibraryTabBarItem.swift */; };
 		A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */; };
 		A54AF5822970EA1100178D19 /* HeaderWithoutSeeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */; };
 		A54AF587297100E600178D19 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF586297100E500178D19 /* PeopleCell.swift */; };
 		A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6D7296F5FCB006EC801 /* AppDelegate.swift */; };
 		A572C6DA296F5FCB006EC801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6D9296F5FCB006EC801 /* SceneDelegate.swift */; };
-		A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */; };
+		A572C6DC296F5FCB006EC801 /* AlbumsTabBorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6DB296F5FCB006EC801 /* AlbumsTabBorItem.swift */; };
 		A572C6E1296F5FCC006EC801 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A572C6E0296F5FCC006EC801 /* Assets.xcassets */; };
 		A572C6E4296F5FCC006EC801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A572C6E2296F5FCC006EC801 /* LaunchScreen.storyboard */; };
 		A572C6EF296F6777006EC801 /* AlbumsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6EE296F6777006EC801 /* AlbumsModel.swift */; };
@@ -21,13 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5412D42297208C70057E4A3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A5412D44297211060057E4A3 /* ForYouTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouTabBarItem.swift; sourceTree = "<group>"; };
+		A5412D462972122D0057E4A3 /* SearchTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTabBarItem.swift; sourceTree = "<group>"; };
+		A5412D482972125C0057E4A3 /* LibraryTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTabBarItem.swift; sourceTree = "<group>"; };
 		A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediAndUtilitiesCell.swift; sourceTree = "<group>"; };
 		A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithoutSeeAll.swift; sourceTree = "<group>"; };
 		A54AF586297100E500178D19 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 		A572C6D4296F5FCB006EC801 /* Home Work 14.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Work 14.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A572C6D7296F5FCB006EC801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A572C6D9296F5FCB006EC801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		A572C6DB296F5FCB006EC801 /* AlbumsTabBorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTabBorItem.swift; sourceTree = "<group>"; };
 		A572C6E0296F5FCC006EC801 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A572C6E3296F5FCC006EC801 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A572C6E5296F5FCC006EC801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,7 +85,11 @@
 		A54AF5852970EC5000178D19 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A572C6DB296F5FCB006EC801 /* AlbumsViewController.swift */,
+				A5412D42297208C70057E4A3 /* TabBarController.swift */,
+				A5412D482972125C0057E4A3 /* LibraryTabBarItem.swift */,
+				A5412D44297211060057E4A3 /* ForYouTabBarItem.swift */,
+				A572C6DB296F5FCB006EC801 /* AlbumsTabBorItem.swift */,
+				A5412D462972122D0057E4A3 /* SearchTabBarItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,9 +221,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A572C6F5296F8F13006EC801 /* MyAlbumViewCell.swift in Sources */,
+				A5412D492972125C0057E4A3 /* LibraryTabBarItem.swift in Sources */,
 				A572C6F3296F7AA9006EC801 /* AlbumsCellHeader.swift in Sources */,
 				A54AF5822970EA1100178D19 /* HeaderWithoutSeeAll.swift in Sources */,
-				A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */,
+				A5412D45297211060057E4A3 /* ForYouTabBarItem.swift in Sources */,
+				A5412D43297208C70057E4A3 /* TabBarController.swift in Sources */,
+				A5412D472972122D0057E4A3 /* SearchTabBarItem.swift in Sources */,
+				A572C6DC296F5FCB006EC801 /* AlbumsTabBorItem.swift in Sources */,
 				A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */,
 				A54AF587297100E600178D19 /* PeopleCell.swift in Sources */,
 				A572C6D8296F5FCB006EC801 /* AppDelegate.swift in Sources */,
