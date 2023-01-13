@@ -187,7 +187,7 @@ class AlbumsViewController: UIViewController {
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
                     layoutSize: layoutSectionHeaderSize,
                     elementKind: UICollectionView.elementKindSectionHeader,
-                    alignment: .topLeading
+                    alignment: .top
                 )
                 layoutSection.boundarySupplementaryItems = [layoutSectionHeader]
                 layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0,

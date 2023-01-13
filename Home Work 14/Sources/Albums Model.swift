@@ -29,7 +29,7 @@ extension AlbumsModel {
         [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 1...30)), image: "allBooks"),
          AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 4000...10000)), image: "Places"),
         ],
-        [AlbumsModel(mainTitle: "Video", valueOfPhoto: nil, image: "video", numberOfItem: nil),
+        [AlbumsModel(mainTitle: "Videos", valueOfPhoto: nil, image: "video", numberOfItem: nil),
          AlbumsModel(mainTitle: "Selfies", valueOfPhoto: nil, image: "person.crop.square", numberOfItem: nil),
          AlbumsModel(mainTitle: "Live Photo", valueOfPhoto: nil, image: "livephoto", numberOfItem: nil),
          AlbumsModel(mainTitle: "Portrait", valueOfPhoto: nil, image: "cube", numberOfItem: nil),

@@ -16,7 +16,12 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
 //        label.font = UIFont.preferredFont(forTextStyle: .title2)
-        label.font = .systemFont(ofSize: 13, weight: .bold)
+        if #available(iOS 16.0, *) {
+            label.font = .systemFont(ofSize: 20, weight: .regular, width: .standard)
+        } else {
+            // Fallback on earlier versions
+        }
+        label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -25,7 +30,7 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -54,15 +59,13 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         
         NSLayoutConstraint.activate([
         
-            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-//            image.topAnchor.constraint(equalTo: contentView.topAnchor),
-//            image.bottomAnchor.constraint(equalTo: featuredTitle.topAnchor, constant: 10),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 18),
             image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            image.heightAnchor.constraint(equalToConstant: 10),
-            image.widthAnchor.constraint(equalToConstant: 10),
+            image.heightAnchor.constraint(equalToConstant: 26),
+            image.widthAnchor.constraint(equalToConstant: 30),
             
             mainTitleLable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            mainTitleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 100)
+            mainTitleLable.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20)
             
         ])
     }
