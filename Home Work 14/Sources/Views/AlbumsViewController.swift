@@ -15,11 +15,16 @@ class AlbumsViewController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
-        collection.register(AlbumsCell.self, forCellWithReuseIdentifier: AlbumsCell.identifier)
-        collection.register(MediAndUtilitiesCell.self, forCellWithReuseIdentifier: MediAndUtilitiesCell.identifier)
+       
         collection.translatesAutoresizingMaskIntoConstraints = false
+        
+        //MARK: Headers
         collection.register(AlbumsCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumsCellHeader.identifier)
+        collection.register(MediaAndUtilitiesHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: MediaAndUtilitiesHeader.identifier)
+        
+        //MARK: Cell
         collection.register(MyAlbumViewCell.self, forCellWithReuseIdentifier: MyAlbumViewCell.identifier)
+        collection.register(MediAndUtilitiesCell.self, forCellWithReuseIdentifier: MediAndUtilitiesCell.identifier)
         
         collection.delegate = self
         collection.dataSource = self
@@ -239,7 +244,7 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
             return item
         default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumsCell.identifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath)
             cell.backgroundColor = .systemGray
             return cell
         }
@@ -262,11 +267,11 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             header.title.text = "People & Places"
             return header
         case 3:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MediaAndUtilitiesHeader.identifier, for: indexPath) as! MediaAndUtilitiesHeader
             header.title.text = "Media Types"
             return header
         case 4:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MediaAndUtilitiesHeader.identifier, for: indexPath) as! MediaAndUtilitiesHeader
             header.title.text = "Utilities"
             return header
         default:

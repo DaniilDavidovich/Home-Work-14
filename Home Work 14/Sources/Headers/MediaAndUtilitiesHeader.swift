@@ -1,15 +1,15 @@
 //
-//  AlbumCellHeaderCollectionReusableView.swift
+//  MediaAndUtilitiesHeader.swift
 //  Home Work 14
 //
-//  Created by Daniil Davidovich on 12.01.23.
+//  Created by Daniil Davidovich on 13.01.23.
 //
 
 import UIKit
 
-class AlbumsCellHeader: UICollectionReusableView {
-      
-    static let identifier = "AlbumCellHeader"
+class MediaAndUtilitiesHeader: UICollectionReusableView {
+        
+    static let identifier = "MediaAndUtillitiesCellHeader"
     
     // MARK: - Outlets
     let lineLabel: UILabel = {
@@ -18,16 +18,6 @@ class AlbumsCellHeader: UICollectionReusableView {
         lineLabelRight.layer.cornerRadius = 2
         lineLabelRight.translatesAutoresizingMaskIntoConstraints = false
         return lineLabelRight
-    }()
-    
-    private lazy var buttonSeeAll: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("See All", for: .normal)
-        button.setTitleColor(.systemBlue, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        
-        return button
     }()
     
     lazy var title: UILabel = {
@@ -55,7 +45,6 @@ class AlbumsCellHeader: UICollectionReusableView {
     private func setupHierarchy() {
         addSubview(title)
         addSubview(lineLabel)
-        addSubview(buttonSeeAll)
     }
     
     private func setupLayout() {
@@ -75,8 +64,6 @@ class AlbumsCellHeader: UICollectionReusableView {
             title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             title.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             
-            buttonSeeAll.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            buttonSeeAll.centerYAnchor.constraint(equalTo: title.centerYAnchor),
         ])
     }
     
