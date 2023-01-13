@@ -1,17 +1,24 @@
 //
-//  AlbumCellHeaderCollectionReusableView.swift
+//  MediaAndUtilitiesHeader.swift
 //  Home Work 14
 //
-//  Created by Daniil Davidovich on 12.01.23.
+//  Created by Daniil Davidovich on 13.01.23.
 //
 
 import UIKit
 
-class AlbumCellHeader: UICollectionReusableView {
-      
-    static let identifier = "AlbumCellHeader"
+class HeaderWithoutSeeAll: UICollectionReusableView {
+        
+    static let identifier = "MediaAndUtillitiesCellHeader"
     
     // MARK: - Outlets
+    let lineLabel: UILabel = {
+        let lineLabelRight = UILabel ()
+        lineLabelRight.backgroundColor = .systemGray5
+        lineLabelRight.layer.cornerRadius = 2
+        lineLabelRight.translatesAutoresizingMaskIntoConstraints = false
+        return lineLabelRight
+    }()
     
     lazy var title: UILabel = {
         let label = UILabel()
@@ -37,6 +44,7 @@ class AlbumCellHeader: UICollectionReusableView {
     
     private func setupHierarchy() {
         addSubview(title)
+        addSubview(lineLabel)
     }
     
     private func setupLayout() {
@@ -47,8 +55,17 @@ class AlbumCellHeader: UICollectionReusableView {
 //        }
         
         NSLayoutConstraint.activate([
+            
+            self.heightAnchor.constraint(equalToConstant: 50),
+            
+            lineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            lineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            lineLabel.heightAnchor.constraint(equalToConstant: 1),
+            lineLabel.bottomAnchor.constraint(equalTo: title.topAnchor, constant: -10),
+            
             title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor)
+            title.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            
         ])
     }
     
