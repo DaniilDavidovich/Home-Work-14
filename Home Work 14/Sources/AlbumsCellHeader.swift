@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlbumCellHeader: UICollectionReusableView {
+class AlbumsCellHeader: UICollectionReusableView {
       
     static let identifier = "AlbumCellHeader"
     

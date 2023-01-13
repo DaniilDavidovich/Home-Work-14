@@ -25,7 +25,7 @@ class MyAlbumViewCell: UICollectionViewCell {
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
 //        label.font = UIFont.preferredFont(forTextStyle: .title2)
-        label.font = .systemFont(ofSize: 13, weight: .bold)
+        label.font = .systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

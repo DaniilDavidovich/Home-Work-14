@@ -12,6 +12,14 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     static let identifier = "MediAndUtilities"
     
     // MARK: - Outlets
+    
+    let lineLabel: UILabel = {
+        let lineLabelRight = UILabel ()
+        lineLabelRight.backgroundColor = .systemGray5
+        lineLabelRight.layer.cornerRadius = 2
+        lineLabelRight.translatesAutoresizingMaskIntoConstraints = false
+        return lineLabelRight
+    }()
 
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
@@ -53,18 +61,24 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     private func setupHierarchy() {
         contentView.addSubview(image)
         contentView.addSubview(mainTitleLable)
+        contentView.addSubview(lineLabel)
     }
     
     private func setupLayout() {
         
         NSLayoutConstraint.activate([
+            
+            lineLabel.leadingAnchor.constraint(equalTo: image.leadingAnchor),
+            lineLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            lineLabel.heightAnchor.constraint(equalToConstant: 1),
+            lineLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -17),
         
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 18),
-            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            image.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 5.5),
             image.heightAnchor.constraint(equalToConstant: 26),
             image.widthAnchor.constraint(equalToConstant: 30),
             
-            mainTitleLable.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            mainTitleLable.centerYAnchor.constraint(equalTo: image.centerYAnchor),
             mainTitleLable.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20)
             
         ])

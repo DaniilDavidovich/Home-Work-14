@@ -15,7 +15,7 @@
 		A572C6E4296F5FCC006EC801 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A572C6E2296F5FCC006EC801 /* LaunchScreen.storyboard */; };
 		A572C6EF296F6777006EC801 /* Albums Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6EE296F6777006EC801 /* Albums Model.swift */; };
 		A572C6F1296F6B46006EC801 /* AlbumsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6F0296F6B46006EC801 /* AlbumsCell.swift */; };
-		A572C6F3296F7AA9006EC801 /* AlbumCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6F2296F7AA9006EC801 /* AlbumCellHeader.swift */; };
+		A572C6F3296F7AA9006EC801 /* AlbumsCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6F2296F7AA9006EC801 /* AlbumsCellHeader.swift */; };
 		A572C6F5296F8F13006EC801 /* MyAlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A572C6F4296F8F13006EC801 /* MyAlbumViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +30,7 @@
 		A572C6E5296F5FCC006EC801 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A572C6EE296F6777006EC801 /* Albums Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Albums Model.swift"; sourceTree = "<group>"; };
 		A572C6F0296F6B46006EC801 /* AlbumsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCell.swift; sourceTree = "<group>"; };
-		A572C6F2296F7AA9006EC801 /* AlbumCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCellHeader.swift; sourceTree = "<group>"; };
+		A572C6F2296F7AA9006EC801 /* AlbumsCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsCellHeader.swift; sourceTree = "<group>"; };
 		A572C6F4296F8F13006EC801 /* MyAlbumViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlbumViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,7 +88,7 @@
 				A572C6EE296F6777006EC801 /* Albums Model.swift */,
 				A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */,
 				A572C6F0296F6B46006EC801 /* AlbumsCell.swift */,
-				A572C6F2296F7AA9006EC801 /* AlbumCellHeader.swift */,
+				A572C6F2296F7AA9006EC801 /* AlbumsCellHeader.swift */,
 				A572C6F4296F8F13006EC801 /* MyAlbumViewCell.swift */,
 			);
 			path = Sources;
@@ -174,7 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A572C6F5296F8F13006EC801 /* MyAlbumViewCell.swift in Sources */,
-				A572C6F3296F7AA9006EC801 /* AlbumCellHeader.swift in Sources */,
+				A572C6F3296F7AA9006EC801 /* AlbumsCellHeader.swift in Sources */,
 				A572C6DC296F5FCB006EC801 /* AlbumsViewController.swift in Sources */,
 				A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */,
 				A572C6F1296F6B46006EC801 /* AlbumsCell.swift in Sources */,
