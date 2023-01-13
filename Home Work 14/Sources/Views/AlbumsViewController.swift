@@ -11,8 +11,6 @@ class AlbumsViewController: UIViewController {
     
     //MARK: - Outlets
     
-    
-    
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
        
@@ -25,6 +23,7 @@ class AlbumsViewController: UIViewController {
         //MARK: Cell
         collection.register(MyAlbumViewCell.self, forCellWithReuseIdentifier: MyAlbumViewCell.identifier)
         collection.register(MediAndUtilitiesCell.self, forCellWithReuseIdentifier: MediAndUtilitiesCell.identifier)
+        collection.register(PeopleCell.self, forCellWithReuseIdentifier: PeopleCell.identifier)
         
         collection.delegate = self
         collection.dataSource = self
@@ -199,9 +198,23 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
             item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
             return item
         case 2:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
-            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-            return item
+            
+            switch indexPath.item {
+            case 0:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: PeopleCell.identifier, for: indexPath) as! PeopleCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            case 1:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
+                
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            default:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            }
+            
         case 3:
             let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
             item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
@@ -218,9 +231,6 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-//        let layout = self.collectionView.collectionViewLayout  // Assuming you use the default flow layout
-//           layout.headerReferenceSize = CGSize(width: 42, height: 42) //Set the header size
         
         switch indexPath.section {
         case 0:
@@ -263,9 +273,4 @@ extension AlbumsViewController: UICollectionViewDataSource, UICollectionViewDele
     }
 }
 
-
-extension AlbumsViewController: UICollectionViewDelegateFlowLayout {
-    
-    
-}
 

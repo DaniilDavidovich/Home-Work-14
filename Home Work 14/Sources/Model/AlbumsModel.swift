@@ -44,6 +44,9 @@ extension AlbumsModel {
         [AlbumsModel(mainTitle: "Imports", valueOfPhoto: nil, image: "square.and.arrow.down", numberOfItem: nil),
          AlbumsModel(mainTitle: "Duplicates", valueOfPhoto: nil, image: "rectangle.on.rectangle", numberOfItem: nil),
          AlbumsModel(mainTitle: "Recently Deleted", valueOfPhoto: nil, image: "trash", numberOfItem: nil),
+         ]
         ]
-    ]
+        
+        static let people: [String] = ["People1","People2","People3","People4"]
+    
 }

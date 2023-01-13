@@ -23,12 +23,14 @@ class MediAndUtilitiesCell: UICollectionViewCell {
 
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
+        
 //        label.font = UIFont.preferredFont(forTextStyle: .title2)
         if #available(iOS 16.0, *) {
             label.font = .systemFont(ofSize: 20, weight: .regular, width: .standard)
         } else {
             // Fallback on earlier versions
         }
+        
         label.textColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
