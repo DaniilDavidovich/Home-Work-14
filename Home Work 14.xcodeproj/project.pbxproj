@@ -14,6 +14,7 @@
 		A5412D4F297226A10057E4A3 /* FamilyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D4E297226A10057E4A3 /* FamilyCell.swift */; };
 		A5412D51297233260057E4A3 /* HolidaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D50297233260057E4A3 /* HolidaysCell.swift */; };
 		A5412D532972360C0057E4A3 /* FriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D522972360C0057E4A3 /* FriendsCell.swift */; };
+		A5412D59297263D70057E4A3 /* DetailViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5412D58297263D70057E4A3 /* DetailViewCell.swift */; };
 		A54AF57F2970D23A00178D19 /* MediAndUtilitiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */; };
 		A54AF5822970EA1100178D19 /* HeaderWithoutSeeAll.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */; };
 		A54AF587297100E600178D19 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54AF586297100E500178D19 /* PeopleCell.swift */; };
@@ -35,6 +36,7 @@
 		A5412D4E297226A10057E4A3 /* FamilyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyCell.swift; sourceTree = "<group>"; };
 		A5412D50297233260057E4A3 /* HolidaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysCell.swift; sourceTree = "<group>"; };
 		A5412D522972360C0057E4A3 /* FriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCell.swift; sourceTree = "<group>"; };
+		A5412D58297263D70057E4A3 /* DetailViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewCell.swift; sourceTree = "<group>"; };
 		A54AF57E2970D23A00178D19 /* MediAndUtilitiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediAndUtilitiesCell.swift; sourceTree = "<group>"; };
 		A54AF5812970EA1100178D19 /* HeaderWithoutSeeAll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderWithoutSeeAll.swift; sourceTree = "<group>"; };
 		A54AF586297100E500178D19 /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				A5412D42297208C70057E4A3 /* TabBarController.swift */,
+				A5412D58297263D70057E4A3 /* DetailViewCell.swift */,
 				A5412D4B297220770057E4A3 /* LibraryView */,
 				A5412D4C297220880057E4A3 /* ForYouView */,
 				A5412D4A297220500057E4A3 /* AlbumsView */,
@@ -300,6 +303,7 @@
 				A5412D45297211060057E4A3 /* ForYouTabBarItem.swift in Sources */,
 				A5412D51297233260057E4A3 /* HolidaysCell.swift in Sources */,
 				A5412D43297208C70057E4A3 /* TabBarController.swift in Sources */,
+				A5412D59297263D70057E4A3 /* DetailViewCell.swift in Sources */,
 				A5412D532972360C0057E4A3 /* FriendsCell.swift in Sources */,
 				A5412D472972122D0057E4A3 /* SearchTabBarItem.swift in Sources */,
 				A5412D4F297226A10057E4A3 /* FamilyCell.swift in Sources */,

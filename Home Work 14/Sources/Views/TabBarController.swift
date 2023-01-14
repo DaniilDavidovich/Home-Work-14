@@ -40,14 +40,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.setViewControllers(conrollers, animated: true)
     }
     
-//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        var navigation = viewController
-//        navigation as? UINavigationController
-//        
-//        return true
-//
-//    }
-    
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         //
     }
