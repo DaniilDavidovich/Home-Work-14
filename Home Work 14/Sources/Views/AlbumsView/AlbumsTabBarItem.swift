@@ -17,13 +17,16 @@ class AlbumsTabBorItem: UIViewController {
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         //MARK: Headers
-        collection.register(AlbumsCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AlbumsCellHeader.identifier)
+        collection.register(HeaderWithSeeAll.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderWithSeeAll.identifier)
         collection.register(HeaderWithoutSeeAll.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderWithoutSeeAll.identifier)
         
-        //MARK: Cell
+        //MARK: Cells
         collection.register(MyAlbumViewCell.self, forCellWithReuseIdentifier: MyAlbumViewCell.identifier)
         collection.register(MediAndUtilitiesCell.self, forCellWithReuseIdentifier: MediAndUtilitiesCell.identifier)
         collection.register(PeopleCell.self, forCellWithReuseIdentifier: PeopleCell.identifier)
+        collection.register(FamilyCell.self, forCellWithReuseIdentifier: FamilyCell.identifier)
+        collection.register(HolidaysCell.self, forCellWithReuseIdentifier: HolidaysCell.identifier)
+        collection.register(FriendsCell.self, forCellWithReuseIdentifier: FriendsCell.identifier)
         
         collection.delegate = self
         collection.dataSource = self
@@ -38,7 +41,7 @@ class AlbumsTabBorItem: UIViewController {
         setupView()
         setupHierarhy()
         setupLayout()
-        collectionView.delaysContentTouches = false
+        collectionView.delaysContentTouches = false //for animation
     }
     
     //MARK: - Setups
@@ -194,9 +197,21 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
             item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
             return item
         case 1:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
-            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-            return item
+            switch indexPath.item {
+            case 0:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FamilyCell.identifier, for: indexPath) as! FamilyCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            case 1:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: HolidaysCell.identifier, for: indexPath) as! HolidaysCell
+                
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            default:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FriendsCell.identifier, for: indexPath) as! FriendsCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            }
         case 2:
             
             switch indexPath.item {
@@ -234,12 +249,12 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
         
         switch indexPath.section {
         case 0:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderWithSeeAll.identifier, for: indexPath) as! HeaderWithSeeAll
             header.title.text = "My Albums"
             
             return header
         case 1:
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AlbumsCellHeader.identifier, for: indexPath) as! AlbumsCellHeader
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderWithSeeAll.identifier, for: indexPath) as! HeaderWithSeeAll
             header.title.text = "Shared Albums"
             return header
             
@@ -261,6 +276,8 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
         }
     }
     
+    //MARK: Animation
+    
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
             let cell = collectionView.cellForItem(at: indexPath)
             UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
@@ -275,6 +292,7 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
             })
         }
     
+    //MARK: Action
     
     @objc private func addTapped() {
         
