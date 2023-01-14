@@ -26,7 +26,7 @@ extension AlbumsModel {
          AlbumsModel(mainTitle: "Holidays", valueOfPhoto: "Created by Maxim", image: "Holidays"),
          AlbumsModel(mainTitle: "Friends", valueOfPhoto: "Created by You", image: "Friends")
         ],
-        [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 1...30)), image: "allBooks"),
+        [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 4...30)), image: "allBooks"),
          AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 500...4000)), image: "Places"),
         ],
         [AlbumsModel(mainTitle: "Videos", valueOfPhoto: nil, image: "video", numberOfItem: nil),

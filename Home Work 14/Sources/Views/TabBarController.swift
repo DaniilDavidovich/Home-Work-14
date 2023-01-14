@@ -12,6 +12,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     func setupTabBarController() {
         tabBar.tintColor = .systemBlue
         
+        // for transmitions
         if #available(iOS 15.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
@@ -19,19 +20,19 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
     func setupTabBarViewControllers() {
-        let firstViewController = LibraryTabBarItem()
+        let firstViewController = UINavigationController(rootViewController: LibraryTabBarItem())
         let firstIcon = UITabBarItem(title: "Library", image: UIImage(systemName: "photo.on.rectangle"), selectedImage: UIImage(systemName: "photo.on.rectangle"))
         firstViewController.tabBarItem = firstIcon
         
-        let secondViewController = ForYouTabBarItem()
+        let secondViewController = UINavigationController(rootViewController:ForYouTabBarItem())
         let secondItem = UITabBarItem(title: "For You", image: UIImage(systemName: "heart.text.square.fill"), selectedImage: UIImage(systemName: "heart.text.square.fill"))
         secondViewController.tabBarItem = secondItem
         
-        let thirdViewController = AlbumsTabBorItem()
+        let thirdViewController = UINavigationController(rootViewController: AlbumsTabBorItem())
         let thirdIcon = UITabBarItem(title: "Albums", image: UIImage(systemName: "rectangle.stack.fill"), selectedImage: UIImage(systemName: "rectangle.stack.fill"))
         thirdViewController.tabBarItem = thirdIcon
         
-        let fourViewController = SearchTabBarItem()
+        let fourViewController = UINavigationController(rootViewController:SearchTabBarItem())
         let fourtIcon = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(systemName: "magnifyingglass"))
         fourViewController.tabBarItem = fourtIcon
         
@@ -40,9 +41,15 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     }
     
 //    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        print("Будет выбран контроллер - \(viewController.title ?? "")")
+//        var navigation = viewController
+//        navigation as? UINavigationController
+//        
 //        return true
 //
 //    }
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        //
+    }
     
 }

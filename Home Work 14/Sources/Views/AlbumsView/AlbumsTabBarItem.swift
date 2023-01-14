@@ -11,6 +11,7 @@ class AlbumsTabBorItem: UIViewController {
     
     //MARK: - Outlets
     
+    
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
        
