@@ -40,8 +40,5 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.setViewControllers(conrollers, animated: true)
     }
     
-    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-        //
-    }
     
 }

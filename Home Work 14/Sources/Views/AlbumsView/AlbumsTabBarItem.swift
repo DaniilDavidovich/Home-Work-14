@@ -48,11 +48,9 @@ class AlbumsTabBorItem: UIViewController {
     //MARK: - Setups
     
     private func setupView() {
-        tabBarController?.title = "Albums"
         title = "Albums"
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(addTapped))
     }
@@ -248,6 +246,12 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailView = DetailViewController()
+        detailView.cell = AlbumsModel.modelsArray[indexPath.section][indexPath.row]
+        navigationController?.pushViewController(detailView, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         switch indexPath.section {
@@ -295,6 +299,8 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
             })
         }
     
+    
+   
     //MARK: Action
     
     @objc private func addTapped() {
