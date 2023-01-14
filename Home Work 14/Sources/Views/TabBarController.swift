@@ -11,7 +11,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     func setupTabBarController() {
         tabBar.tintColor = .systemBlue
-        tabBar.backgroundColor = .white
+        
+        if #available(iOS 15.0, *) {
+            let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
     }
     
     func setupTabBarViewControllers() {
