@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
                 }
             } else {
                 image.image = UIImage(named: (cell?.image)!) ?? UIImage(systemName: (cell?.image)!)
+                image.tintColor = .systemBlue
                 label.text = cell?.mainTitle ?? ""
             }
         }

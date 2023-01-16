@@ -137,5 +137,19 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         super.prepareForReuse()
         self.image.image = nil
         self.mainTitleLable.text = nil
+        
+        // change color line to dark mode in prepare
+        if traitCollection.userInterfaceStyle == .dark {
+            lineLabel.backgroundColor = .systemGray5
+            if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
+                lineLabel.backgroundColor = .black
+            }
+        }
+        else {
+            lineLabel.backgroundColor = .systemGray5
+            if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
+                lineLabel.backgroundColor = .white
+            }
+        }
     }
 }
