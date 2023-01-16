@@ -48,7 +48,11 @@ class DetailViewController: UIViewController {
     //MARK: - Setups
     
     private func setupView() {
-        view.backgroundColor = .white
+        if traitCollection.userInterfaceStyle == .dark {
+            view.backgroundColor = .black
+        } else {
+            view.backgroundColor = .white
+        }
     }
     
     private func setupHierarchy() {
