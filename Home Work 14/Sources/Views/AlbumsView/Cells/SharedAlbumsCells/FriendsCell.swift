@@ -146,8 +146,8 @@ class FriendsCell: UICollectionViewCell {
         self.mainTitleLable.text = model.mainTitle
         self.valueOfPhoto.text = model.valueOfPhoto
         self.image.image = UIImage(named: model.image ?? "")
-        self.imageSmallView.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...3)])
-        self.imageSmallView2.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...3)])
+        self.imageSmallView.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...4)])
+        self.imageSmallView2.image = UIImage(named: AlbumsModel.people[Int.random(in: 5...9)])
     }
     
     override func prepareForReuse() {

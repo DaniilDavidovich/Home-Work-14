@@ -1,15 +1,15 @@
 //
-//  MediAndUtilitiesCell.swift
+//  RecentlyDeletedCell.swift
 //  Home Work 14
 //
-//  Created by Daniil Davidovich on 13.01.23.
+//  Created by Daniil Davidovich on 16.01.23.
 //
 
 import UIKit
 
-class MediAndUtilitiesCell: UICollectionViewCell {
+class RecentlyDeletedCell: UICollectionViewCell {
     
-    static let identifier = "MediAndUtilities"
+    static let identifier = "UtilitiesRecentlyCell"
     
     // MARK: - Outlets
     
@@ -29,13 +29,12 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var labelRihtSite: UILabel = {
-        let label = UILabel()
-        label.textColor = .systemGray
-        label.text = String(Int.random(in: 1...500))
-        label.font = .systemFont(ofSize: 16, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var lockImageRightSite: UIImageView = {
+        let image = UIImage(systemName: "lock.fill")
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = .systemGray
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
 
     private lazy var mainTitleLable: UILabel = {
@@ -82,15 +81,17 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         contentView.addSubview(mainTitleLable)
         contentView.addSubview(lineLabel)
         contentView.addSubview(imageRightSite)
-        contentView.addSubview(labelRihtSite)
+        contentView.addSubview(lockImageRightSite)
     }
     
     private func setupLayout() {
         
         NSLayoutConstraint.activate([
             
-            labelRihtSite.centerYAnchor.constraint(equalTo: image.centerYAnchor),
-            labelRihtSite.trailingAnchor.constraint(equalTo: imageRightSite.leadingAnchor, constant: -3),
+            lockImageRightSite.centerYAnchor.constraint(equalTo: image.centerYAnchor),
+            lockImageRightSite.trailingAnchor.constraint(equalTo: imageRightSite.leadingAnchor, constant: -3),
+            lockImageRightSite.widthAnchor.constraint(equalToConstant: 17),
+            lockImageRightSite.heightAnchor.constraint(equalToConstant: 19),
             
             imageRightSite.centerYAnchor.constraint(equalTo: image.centerYAnchor),
             imageRightSite.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant:  -15),

@@ -1,16 +1,16 @@
 //
-//  SharedAlbumsCellCollectionViewCell.swift
+//  FavoriteViewCell.swift
 //  Home Work 14
 //
-//  Created by Daniil Davidovich on 14.01.23.
+//  Created by Daniil Davidovich on 16.01.23.
 //
 
 import UIKit
 
-class FamilyCell: UICollectionViewCell {
+class FavoriteViewCell: UICollectionViewCell {
     
-    static let identifier = "FamilyCell"
-
+    static let identifier = "FavoriteCell"
+    
     // MARK: - Outlets
     
     private lazy var valueOfPhoto: UILabel = {
@@ -37,23 +37,12 @@ class FamilyCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var imageSmallView: UIImageView = {
-        let imageView = UIImageView()
+    private lazy var imageHeart: UIImageView = {
+        let image = UIImage(systemName: "heart.fill")
+        let imageView = UIImageView(image: image)
+        imageView.tintColor = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.layer.borderWidth = 1.25
-        imageView.layer.borderColor = UIColor.white.cgColor
-        return imageView
-    }()
-    
-    private lazy var imageCorner: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.layer.borderWidth = 0.2
-        imageView.layer.borderColor = UIColor.black.cgColor
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
@@ -77,14 +66,18 @@ class FamilyCell: UICollectionViewCell {
         contentView.addSubview(image)
         contentView.addSubview(mainTitleLable)
         contentView.addSubview(valueOfPhoto)
-        contentView.addSubview(imageSmallView)
-        contentView.addSubview(imageCorner)
+        contentView.addSubview(imageHeart)
     }
     
     private func setupLayout() {
         
         NSLayoutConstraint.activate([
-        
+            
+            imageHeart.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            imageHeart.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: -5),
+            imageHeart.heightAnchor.constraint(equalToConstant: 20),
+            imageHeart.widthAnchor.constraint(equalToConstant: 20),
+            
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             image.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             image.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -94,17 +87,7 @@ class FamilyCell: UICollectionViewCell {
             valueOfPhoto.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             mainTitleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            mainTitleLable.bottomAnchor.constraint(equalTo: valueOfPhoto.topAnchor),
-            
-            imageSmallView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -7),
-            imageSmallView.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: -7),
-            imageSmallView.widthAnchor.constraint(equalToConstant: 40),
-            imageSmallView.heightAnchor.constraint(equalToConstant: 40),
-            
-            imageCorner.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -7),
-            imageCorner.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: -7),
-            imageCorner.widthAnchor.constraint(equalToConstant: 40),
-            imageCorner.heightAnchor.constraint(equalToConstant: 40),
+            mainTitleLable.bottomAnchor.constraint(equalTo: valueOfPhoto.topAnchor)
         ])
     }
     
@@ -114,7 +97,6 @@ class FamilyCell: UICollectionViewCell {
         self.mainTitleLable.text = model.mainTitle
         self.valueOfPhoto.text = model.valueOfPhoto
         self.image.image = UIImage(named: model.image ?? "")
-        self.imageSmallView.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...9)])
     }
     
     override func prepareForReuse() {
@@ -122,9 +104,7 @@ class FamilyCell: UICollectionViewCell {
         self.image.image = nil
         self.valueOfPhoto.text = nil
         self.mainTitleLable.text = nil
-        self.imageSmallView.image = nil
+        self.imageHeart.image = nil
     }
+
 }
-
-
-

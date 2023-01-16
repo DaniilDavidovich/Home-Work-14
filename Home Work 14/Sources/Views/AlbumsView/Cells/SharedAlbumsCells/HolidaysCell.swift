@@ -178,9 +178,9 @@ class HolidaysCell: UICollectionViewCell {
         self.mainTitleLable.text = model.mainTitle
         self.valueOfPhoto.text = model.valueOfPhoto
         self.image.image = UIImage(named: model.image ?? "")
-        self.imageSmallView.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...3)])
-        self.imageSmallView2.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...3)])
-        self.imageSmallView3.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...3)])
+        self.imageSmallView.image = UIImage(named: AlbumsModel.people[Int.random(in: 0...2)])
+        self.imageSmallView2.image = UIImage(named: AlbumsModel.people[Int.random(in: 3...6)])
+        self.imageSmallView3.image = UIImage(named: AlbumsModel.people[Int.random(in: 7...9)])
     }
     
     override func prepareForReuse() {

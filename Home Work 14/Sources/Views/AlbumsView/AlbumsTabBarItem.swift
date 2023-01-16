@@ -27,6 +27,8 @@ class AlbumsTabBorItem: UIViewController {
         collection.register(FamilyCell.self, forCellWithReuseIdentifier: FamilyCell.identifier)
         collection.register(HolidaysCell.self, forCellWithReuseIdentifier: HolidaysCell.identifier)
         collection.register(FriendsCell.self, forCellWithReuseIdentifier: FriendsCell.identifier)
+        collection.register(FavoriteViewCell.self, forCellWithReuseIdentifier: FavoriteViewCell.identifier)
+        collection.register(RecentlyDeletedCell.self, forCellWithReuseIdentifier: RecentlyDeletedCell.identifier)
         
         collection.delegate = self
         collection.dataSource = self
@@ -194,9 +196,17 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
         
         switch indexPath.section {
         case 0:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
-            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-            return item
+            switch indexPath.row {
+            case 1:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteViewCell.identifier, for: indexPath) as! FavoriteViewCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            default:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            }
+           
         case 1:
             switch indexPath.item {
             case 0:
@@ -233,9 +243,16 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
             item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
             return item
         default:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
-            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-            return item
+            switch indexPath.row {
+            case 2:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecentlyDeletedCell.identifier, for: indexPath) as! RecentlyDeletedCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            default:
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
+                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item
+            }
         }
     }
     
