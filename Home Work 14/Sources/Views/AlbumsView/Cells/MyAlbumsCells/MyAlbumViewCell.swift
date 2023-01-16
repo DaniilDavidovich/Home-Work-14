@@ -15,7 +15,6 @@ class MyAlbumViewCell: UICollectionViewCell {
     
     private lazy var valueOfPhoto: UILabel = {
         let label = UILabel()
-//        label.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
         label.font = .systemFont(ofSize: 13)
         label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +23,6 @@ class MyAlbumViewCell: UICollectionViewCell {
     
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
-//        label.font = UIFont.preferredFont(forTextStyle: .title2)
         label.font = .systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,13 +36,6 @@ class MyAlbumViewCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    
-//    lazy var stack: UIStackView = {
-//        let stack = UIStackView()
-//        stack.axis = .vertical
-//        stack.translatesAutoresizingMaskIntoConstraints = false
-//        return stack
-//    }()
     
     // MARK: - Initializers
     
@@ -62,10 +53,6 @@ class MyAlbumViewCell: UICollectionViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
-//        contentView.addSubview(stack)
-//        stack.addArrangedSubview(image)
-//        stack.addArrangedSubview(featuredTitle)
-//        stack.addArrangedSubview(descriptionLabel)
         
         contentView.addSubview(image)
         contentView.addSubview(mainTitleLable)
@@ -73,20 +60,12 @@ class MyAlbumViewCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-//        stack.snp.makeConstraints { make in
-//            make.left.top.right.bottom.equalTo(contentView)
-//        }
-//
-//        stack.setCustomSpacing(10, after: descriptionLabel)
         
         NSLayoutConstraint.activate([
-        
+            
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            image.topAnchor.constraint(equalTo: contentView.topAnchor),
             image.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-//            image.bottomAnchor.constraint(equalTo: featuredTitle.topAnchor, constant: 10),
             image.topAnchor.constraint(equalTo: contentView.topAnchor),
-
             image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
             
             valueOfPhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -94,11 +73,7 @@ class MyAlbumViewCell: UICollectionViewCell {
             
             mainTitleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainTitleLable.bottomAnchor.constraint(equalTo: valueOfPhoto.topAnchor)
-            
         ])
-        
-//        stack.setCustomSpacing(50, after: image)
-//        stack.isBaselineRelativeArrangement = true
     }
     
     // MARK: - Configuration
@@ -112,5 +87,7 @@ class MyAlbumViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.image.image = nil
+        self.valueOfPhoto.text = nil
+        self.mainTitleLable.text = nil
     }
 }

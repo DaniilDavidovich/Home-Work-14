@@ -26,7 +26,6 @@ class HeaderWithSeeAll: UICollectionReusableView {
         button.setTitle("See All", for: .normal)
         button.setTitleColor(.systemBlue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
-        
         return button
     }()
     
@@ -74,7 +73,6 @@ class HeaderWithSeeAll: UICollectionReusableView {
             
             buttonSeeAll.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             buttonSeeAll.centerYAnchor.constraint(equalTo: title.centerYAnchor),
-            
         ])
     }
     

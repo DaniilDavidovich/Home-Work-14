@@ -49,11 +49,6 @@ class HeaderWithoutSeeAll: UICollectionReusableView {
     
     private func setupLayout() {
         
-//        title.snp.makeConstraints { make in
-//            make.bottom.equalTo(self)
-//            make.left.equalTo(self)
-//        }
-        
         NSLayoutConstraint.activate([
             
             self.heightAnchor.constraint(equalToConstant: 50),
@@ -65,7 +60,6 @@ class HeaderWithoutSeeAll: UICollectionReusableView {
             
             title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             title.leadingAnchor.constraint(equalTo: lineLabel.leadingAnchor),
-            
         ])
     }
     

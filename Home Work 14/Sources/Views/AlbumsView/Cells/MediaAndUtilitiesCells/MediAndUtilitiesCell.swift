@@ -26,7 +26,6 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         let imageView = UIImageView(image: image)
         imageView.tintColor = .systemGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
-            
         return imageView
     }()
     
@@ -36,19 +35,16 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         label.text = String(Int.random(in: 1...500))
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
-        
         return label
     }()
 
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
         
-//        label.font = UIFont.preferredFont(forTextStyle: .title2)
         if #available(iOS 16.0, *) {
             label.font = .systemFont(ofSize: 20, weight: .regular, width: .standard)
         } else {
-            // Fallback on earlier versions
+            label.font = .systemFont(ofSize: 20, weight: .regular)
         }
         
         label.textColor = .systemBlue
@@ -81,6 +77,7 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
+        
         contentView.addSubview(image)
         contentView.addSubview(mainTitleLable)
         contentView.addSubview(lineLabel)
@@ -112,7 +109,6 @@ class MediAndUtilitiesCell: UICollectionViewCell {
             
             mainTitleLable.centerYAnchor.constraint(equalTo: image.centerYAnchor),
             mainTitleLable.leadingAnchor.constraint(equalTo: image.trailingAnchor, constant: 20)
-            
         ])
     }
     
@@ -130,5 +126,8 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.image.image = nil
+        self.mainTitleLable.text = nil
+        self.imageRightSite.image = nil
+        self.labelRihtSite.text = nil
     }
 }

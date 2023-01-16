@@ -15,17 +15,14 @@ class PeopleCell: UICollectionViewCell {
     
     private lazy var valueOfPhoto: UILabel = {
         let label = UILabel()
-//        label.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
         label.font = .systemFont(ofSize: 13)
         label.textColor = .systemGray
-//        label.text = String(Int.random(in: 4...15))
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
-//        label.font = UIFont.preferredFont(forTextStyle: .title2)
         label.font = .systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -122,11 +119,11 @@ class PeopleCell: UICollectionViewCell {
             
             mainTitleLable.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainTitleLable.bottomAnchor.constraint(equalTo: valueOfPhoto.topAnchor)
-            
         ])
     }
     
     // MARK: - Configuration
+    
     func configuration(model: AlbumsModel) {
         self.mainTitleLable.text = model.mainTitle
         self.valueOfPhoto.text = model.valueOfPhoto
@@ -138,6 +135,8 @@ class PeopleCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.mainTitleLable.text = nil
+        self.valueOfPhoto.text = nil
         self.imageOne.image = nil
         self.imageTwo.image = nil
         self.imageThree.image = nil

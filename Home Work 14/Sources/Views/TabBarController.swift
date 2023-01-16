@@ -2,6 +2,8 @@
 import UIKit
 
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -9,10 +11,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         setupTabBarViewControllers()
     }
     
+    // MARK: - Setup
     func setupTabBarController() {
         tabBar.tintColor = .systemBlue
         
-        // for transmitions
+        // for transmitions to tabBarController
         if #available(iOS 15.0, *) {
             let tabBarAppearance: UITabBarAppearance = UITabBarAppearance()
             UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
@@ -39,6 +42,4 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let conrollers = [firstViewController, secondViewController, thirdViewController, fourViewController]
         self.setViewControllers(conrollers, animated: true)
     }
-    
-    
 }

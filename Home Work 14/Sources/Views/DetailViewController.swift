@@ -8,13 +8,15 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     var cell: AlbumsModel? {
         didSet {
             image.image = UIImage(named: (cell?.image)!) ?? UIImage(systemName: (cell?.image)!)
             label.text = cell?.mainTitle ?? ""
         }
     }
+    
+    //MARK: - Outlets
     
     private lazy var image: UIImageView = {
         let imageView = UIImageView()
@@ -33,13 +35,17 @@ class DetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
+    
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupHierarchy()
         setupLayout()
     }
+    
+    //MARK: - Setups
     
     private func setupView() {
         view.backgroundColor = .white

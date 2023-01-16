@@ -15,7 +15,6 @@ class HolidaysCell: UICollectionViewCell {
     
     private lazy var valueOfPhoto: UILabel = {
         let label = UILabel()
-//        label.font = UIFontMetrics.default.scaledFont(for: UIFont.systemFont(ofSize: 12, weight: .bold))
         label.font = .systemFont(ofSize: 13)
         label.textColor = .systemGray
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -24,7 +23,6 @@ class HolidaysCell: UICollectionViewCell {
     
     private lazy var mainTitleLable: UILabel = {
         let label = UILabel()
-//        label.font = UIFont.preferredFont(forTextStyle: .title2)
         label.font = .systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -46,7 +44,6 @@ class HolidaysCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.borderWidth = 1.25
         imageView.layer.borderColor = UIColor.white.cgColor
-        
         return imageView
     }()
     
@@ -57,10 +54,8 @@ class HolidaysCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.borderWidth = 0.2
         imageView.layer.borderColor = UIColor.black.cgColor
-        
         return imageView
     }()
-    
     
     private lazy var imageSmallView2: UIImageView = {
         let imageView = UIImageView()
@@ -69,7 +64,6 @@ class HolidaysCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.borderWidth = 1.25
         imageView.layer.borderColor = UIColor.white.cgColor
-        
         return imageView
     }()
     
@@ -80,7 +74,6 @@ class HolidaysCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.borderWidth = 0.2
         imageView.layer.borderColor = UIColor.black.cgColor
-        
         return imageView
     }()
     
@@ -91,7 +84,6 @@ class HolidaysCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.borderWidth = 1.25
         imageView.layer.borderColor = UIColor.white.cgColor
-        
         return imageView
     }()
     
@@ -102,16 +94,8 @@ class HolidaysCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 20
         imageView.layer.borderWidth = 0.2
         imageView.layer.borderColor = UIColor.black.cgColor
-        
         return imageView
     }()
-    
-//    lazy var stack: UIStackView = {
-//        let stack = UIStackView()
-//        stack.axis = .vertical
-//        stack.translatesAutoresizingMaskIntoConstraints = false
-//        return stack
-//    }()
     
     // MARK: - Initializers
     
@@ -129,10 +113,6 @@ class HolidaysCell: UICollectionViewCell {
     // MARK: - Setup
     
     private func setupHierarchy() {
-//        contentView.addSubview(stack)
-//        stack.addArrangedSubview(image)
-//        stack.addArrangedSubview(featuredTitle)
-//        stack.addArrangedSubview(descriptionLabel)
         
         contentView.addSubview(image)
         contentView.addSubview(mainTitleLable)
@@ -146,18 +126,12 @@ class HolidaysCell: UICollectionViewCell {
     }
     
     private func setupLayout() {
-//        stack.snp.makeConstraints { make in
-//            make.left.top.right.bottom.equalTo(contentView)
-//        }
-//
-//        stack.setCustomSpacing(10, after: descriptionLabel)
         
         NSLayoutConstraint.activate([
         
             image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             image.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             image.topAnchor.constraint(equalTo: contentView.topAnchor),
-
             image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -40),
             
             valueOfPhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -181,7 +155,6 @@ class HolidaysCell: UICollectionViewCell {
             imageSmallView2.widthAnchor.constraint(equalToConstant: 40),
             imageSmallView2.heightAnchor.constraint(equalToConstant: 40),
             
-            
             imageCorner2.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35),
             imageCorner2.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: -7),
             imageCorner2.widthAnchor.constraint(equalToConstant: 40),
@@ -193,15 +166,10 @@ class HolidaysCell: UICollectionViewCell {
             imageSmallView3.heightAnchor.constraint(equalToConstant: 40),
             
             imageCorner3.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -65),
-            
             imageCorner3.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: -7),
             imageCorner3.widthAnchor.constraint(equalToConstant: 40),
             imageCorner3.heightAnchor.constraint(equalToConstant: 40),
-            
         ])
-        
-//        stack.setCustomSpacing(50, after: image)
-//        stack.isBaselineRelativeArrangement = true
     }
     
     // MARK: - Configuration
@@ -218,6 +186,8 @@ class HolidaysCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.image.image = nil
+        self.valueOfPhoto.text = nil
+        self.mainTitleLable.text = nil
         self.imageSmallView.image = nil
         self.imageSmallView2.image = nil
         self.imageSmallView3.image = nil
