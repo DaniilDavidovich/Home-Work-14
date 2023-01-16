@@ -92,7 +92,7 @@ class AlbumsTabBorItem: UIViewController {
                 
                 
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(0.93),
+                    widthDimension: .fractionalWidth(1),
                     heightDimension: .estimated(80)
                 )
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
@@ -125,7 +125,7 @@ class AlbumsTabBorItem: UIViewController {
                 
                 
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(0.93),
+                    widthDimension: .fractionalWidth(1),
                     heightDimension: .estimated(80)
                 )
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
@@ -157,7 +157,7 @@ class AlbumsTabBorItem: UIViewController {
                 
                 
                 let layoutSectionHeaderSize = NSCollectionLayoutSize(
-                    widthDimension: .fractionalWidth(0.93),
+                    widthDimension: .fractionalWidth(1),
                     heightDimension: .estimated(80)
                 )
                 let layoutSectionHeader = NSCollectionLayoutBoundarySupplementaryItem(

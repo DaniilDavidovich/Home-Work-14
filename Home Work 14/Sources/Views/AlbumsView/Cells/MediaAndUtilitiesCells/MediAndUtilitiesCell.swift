@@ -121,6 +121,10 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     func configuration(model: AlbumsModel) {
         self.mainTitleLable.text = model.mainTitle
         self.image.image = UIImage(systemName: model.image ?? "")
+        
+        if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
+            lineLabel.backgroundColor = .white
+        }
     }
     
     override func prepareForReuse() {

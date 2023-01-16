@@ -64,15 +64,15 @@ class HeaderWithSeeAll: UICollectionReusableView {
             
             self.heightAnchor.constraint(equalToConstant: 50),
             
-            lineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            lineLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
             lineLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             lineLabel.heightAnchor.constraint(equalToConstant: 1),
             lineLabel.bottomAnchor.constraint(equalTo: title.topAnchor, constant: -10),
             
             title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            title.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            title.leadingAnchor.constraint(equalTo: lineLabel.leadingAnchor),
             
-            buttonSeeAll.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            buttonSeeAll.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -15),
             buttonSeeAll.centerYAnchor.constraint(equalTo: title.centerYAnchor),
             
         ])
