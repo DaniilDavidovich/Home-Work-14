@@ -14,11 +14,11 @@ class MediAndUtilitiesCell: UICollectionViewCell {
     // MARK: - Outlets
     
     let lineLabel: UILabel = {
-        let lineLabelRight = UILabel ()
-        lineLabelRight.backgroundColor = .systemGray5
-        lineLabelRight.layer.cornerRadius = 2
-        lineLabelRight.translatesAutoresizingMaskIntoConstraints = false
-        return lineLabelRight
+        let lineLabel = UILabel ()
+        lineLabel.layer.cornerRadius = 2
+        lineLabel.backgroundColor = .systemGray5
+        lineLabel.translatesAutoresizingMaskIntoConstraints = false
+        return lineLabel
     }()
     
     private lazy var imageRightSite: UIImageView = {
@@ -118,8 +118,18 @@ class MediAndUtilitiesCell: UICollectionViewCell {
         self.mainTitleLable.text = model.mainTitle
         self.image.image = UIImage(systemName: model.image ?? "")
         
-        if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
-            lineLabel.backgroundColor = .white
+        // change color line to dark mode
+        if traitCollection.userInterfaceStyle == .dark {
+            lineLabel.backgroundColor = .systemGray5
+            if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
+                lineLabel.backgroundColor = .black
+            }
+        }
+        else {
+            lineLabel.backgroundColor = .systemGray5
+            if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
+                lineLabel.backgroundColor = .white
+            }
         }
     }
     
