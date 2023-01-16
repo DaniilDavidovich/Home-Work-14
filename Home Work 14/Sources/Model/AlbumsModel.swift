@@ -29,7 +29,7 @@ extension AlbumsModel {
          AlbumsModel(mainTitle: "Friends", valueOfPhoto: "Created by You", image: "Friends")
         ],
         // People & Places
-        [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 4...30)), image: "Peoples"),
+        [AlbumsModel(mainTitle: "People", valueOfPhoto: String(Int.random(in: 4...30)), image: nil),
          AlbumsModel(mainTitle: "Places", valueOfPhoto: String(Int.random(in: 500...4000)), image: "Places"),
         ],
         // Media Types
@@ -51,5 +51,5 @@ extension AlbumsModel {
          AlbumsModel(mainTitle: "Recently Deleted", valueOfPhoto: nil, image: "trash", numberOfItem: nil),
          ]
         ]
-        static let people: [String] = ["People1","People2","People3","People4","People5","People6","People7","People8","People9","People10"]
+        static let people: [String] = ["People1", "People2", "People3", "People4", "People5", "People6", "People7", "People8", "People9", "People10"]
 }

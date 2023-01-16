@@ -93,26 +93,26 @@ class PeopleCell: UICollectionViewCell {
     private func setupLayout() {
         
         NSLayoutConstraint.activate([
-        
-            imageOne.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -42.5),
-            imageOne.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -62.5),
-            imageOne.widthAnchor.constraint(equalToConstant: 80),
-            imageOne.heightAnchor.constraint(equalToConstant: 83.5),
             
-            imageTwo.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 42.5),
-            imageTwo.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -62.5),
-            imageTwo.widthAnchor.constraint(equalToConstant: 80),
-            imageTwo.heightAnchor.constraint(equalToConstant: 83.5),
+            imageOne.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3.5),
+            imageOne.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageOne.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -128),
+            imageOne.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -90),
             
-            imageThree.centerXAnchor.constraint(equalTo: imageOne.centerXAnchor),
-            imageThree.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 23),
-            imageThree.widthAnchor.constraint(equalToConstant: 80),
-            imageThree.heightAnchor.constraint(equalToConstant: 83.5),
+            imageTwo.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageTwo.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -3.5),
+            imageTwo.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -128),
+            imageTwo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 90),
             
-            imageFour.centerXAnchor.constraint(equalTo: imageTwo.centerXAnchor),
-            imageFour.centerYAnchor.constraint(equalTo: imageThree.centerYAnchor),
-            imageFour.widthAnchor.constraint(equalToConstant: 80),
-            imageFour.heightAnchor.constraint(equalToConstant: 83.5),
+            imageThree.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 3.5),
+            imageThree.topAnchor.constraint(equalTo: imageOne.bottomAnchor, constant: 5),
+            imageThree.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -41.5),
+            imageThree.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -90),
+            
+            imageFour.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -3.5),
+            imageFour.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 90),
+            imageFour.topAnchor.constraint(equalTo: imageTwo.bottomAnchor, constant: 5),
+            imageFour.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -41.5),
             
             valueOfPhoto.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             valueOfPhoto.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),

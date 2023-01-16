@@ -11,8 +11,18 @@ class DetailViewController: UIViewController {
     
     var cell: AlbumsModel? {
         didSet {
-            image.image = UIImage(named: (cell?.image)!) ?? UIImage(systemName: (cell?.image)!)
-            label.text = cell?.mainTitle ?? ""
+            if cell?.mainTitle == "People" {
+                if traitCollection.userInterfaceStyle == .dark {
+                    image.image = UIImage(named: "PeoplesDark")
+                    label.text = cell?.mainTitle ?? ""
+                } else {
+                    image.image = UIImage(named: "Peoples")
+                    label.text = cell?.mainTitle ?? ""
+                }
+            } else {
+                image.image = UIImage(named: (cell?.image)!) ?? UIImage(systemName: (cell?.image)!)
+                label.text = cell?.mainTitle ?? ""
+            }
         }
     }
     
