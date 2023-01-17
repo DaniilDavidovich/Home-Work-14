@@ -42,7 +42,6 @@ class AlbumsTabBorItem: UIViewController {
         setupView()
         setupHierarhy()
         setupLayout()
-        collectionView.delaysContentTouches = false //for animation
     }
     
     //MARK: - Setups
@@ -53,6 +52,7 @@ class AlbumsTabBorItem: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTapped))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), style: .plain, target: self, action: #selector(addTapped))
+        collectionView.delaysContentTouches = false //for animation
     }
     
     private func setupHierarhy() {
@@ -232,60 +232,60 @@ extension AlbumsTabBorItem: UICollectionViewDataSource, UICollectionViewDelegate
         case 0:
             switch indexPath.row {
             case 1:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteViewCell.identifier, for: indexPath) as! FavoriteViewCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FavoriteViewCell.identifier, for: indexPath) as? FavoriteViewCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             default:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as? MyAlbumViewCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             }
            
         case 1:
             switch indexPath.item {
             case 0:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FamilyCell.identifier, for: indexPath) as! FamilyCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FamilyCell.identifier, for: indexPath) as? FamilyCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             case 1:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: HolidaysCell.identifier, for: indexPath) as! HolidaysCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: HolidaysCell.identifier, for: indexPath) as? HolidaysCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             default:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FriendsCell.identifier, for: indexPath) as! FriendsCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: FriendsCell.identifier, for: indexPath) as? FriendsCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             }
         case 2:
             
             switch indexPath.item {
             case 0:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: PeopleCell.identifier, for: indexPath) as! PeopleCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: PeopleCell.identifier, for: indexPath) as? PeopleCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             case 1:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as? MyAlbumViewCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             default:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as! MyAlbumViewCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MyAlbumViewCell.identifier, for: indexPath) as? MyAlbumViewCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             }
         case 3:
-            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
-            item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-            return item
+            let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as? MediAndUtilitiesCell
+            item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+            return item ?? UICollectionViewCell()
         default:
             switch indexPath.row {
             case 2:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecentlyDeletedCell.identifier, for: indexPath) as! RecentlyDeletedCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: RecentlyDeletedCell.identifier, for: indexPath) as? RecentlyDeletedCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             default:
-                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as! MediAndUtilitiesCell
-                item.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
-                return item
+                let item = collectionView.dequeueReusableCell(withReuseIdentifier: MediAndUtilitiesCell.identifier, for: indexPath) as? MediAndUtilitiesCell
+                item?.configuration(model: AlbumsModel.modelsArray[indexPath.section][indexPath.item])
+                return item ?? UICollectionViewCell()
             }
         }
     }

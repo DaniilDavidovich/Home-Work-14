@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
                     label.text = cell?.mainTitle ?? ""
                 }
             } else {
-                image.image = UIImage(named: (cell?.image)!) ?? UIImage(systemName: (cell?.image)!)
+                image.image = UIImage(named: (cell?.image)!) ?? UIImage(systemName: (cell?.image ?? ""))
                 image.tintColor = .systemBlue
                 label.text = cell?.mainTitle ?? ""
             }
