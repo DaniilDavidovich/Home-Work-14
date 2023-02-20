@@ -126,9 +126,10 @@ class MediAndUtilitiesCell: UICollectionViewCell {
             }
         }
         else {
-            lineLabel.backgroundColor = .systemGray5
             if mainTitleLable.text == "Imports" || mainTitleLable.text == "Videos"{
                 lineLabel.backgroundColor = .white
+            } else {
+                lineLabel.backgroundColor = .systemGray5
             }
         }
     }
